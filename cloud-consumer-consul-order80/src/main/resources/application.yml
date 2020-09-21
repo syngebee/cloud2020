@@ -1,0 +1,9 @@
+server:
+  port: 80
+spring:
+  application:
+    name: cloud-order-service
+  cloud:
+    consul:
+      host: 192.168.41.132
+      port: 8500
