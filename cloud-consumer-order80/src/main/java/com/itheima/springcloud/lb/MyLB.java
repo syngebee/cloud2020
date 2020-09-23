@@ -21,7 +21,7 @@ public class MyLB implements LoadBalancer {
             //current是当前值,也是期望值, 期望当前值==atomicInteger
             //如果相等,则使用next的值修改atomicInteger
         }while(!this.atomicInteger.compareAndSet(current,next));
-        System.out.println("*****第几次访问,次数next: "+next);
+        System.out.println("*****访问次数next: "+next);
         return next;
     }
 
