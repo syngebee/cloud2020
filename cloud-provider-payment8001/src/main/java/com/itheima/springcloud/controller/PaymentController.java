@@ -56,6 +56,7 @@ public class PaymentController {
     }
 
     @GetMapping("/feign/timeout")
+    //测试超时设置
     public String getPaymentTimeout(){
         try {
             Thread.sleep(3000);
