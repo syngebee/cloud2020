@@ -9,14 +9,13 @@ import org.springframework.integration.support.MessageBuilder;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.MessageChannel;
 
-import javax.annotation.Resource;
 import java.util.UUID;
 
 @EnableBinding(Source.class) //定义消息的推送管道,他是Source
 public class IMessageProviderImpl implements IMessageProvider {
 
     @Autowired
-    @Qualifier("output")
+    @Qualifier(Source.OUTPUT)
     private MessageChannel output;  //消息发送管道.
 
     @Override
