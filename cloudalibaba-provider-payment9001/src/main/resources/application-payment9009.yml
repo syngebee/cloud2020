@@ -9,6 +9,6 @@ spring:
         server-addr: 192.168.41.129:1111
 management:
   endpoints:
-    jmx:
+    web:
       exposure:
         include: '*'

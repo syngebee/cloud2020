@@ -9,6 +9,6 @@ spring:
         server-addr: localhost:8848
 management:
   endpoints:
-    jmx:
+    web:
       exposure:
         include: '*'
