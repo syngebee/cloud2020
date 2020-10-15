@@ -1,6 +1,5 @@
 package com.itheima.springcloud.controller;
 
-import com.itheima.myrule.MyselfRule;
 import com.itheima.springcloud.entities.CommonResult;
 import com.itheima.springcloud.entities.Payment;
 import com.itheima.springcloud.lb.LoadBalancer;
@@ -8,7 +7,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;

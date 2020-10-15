@@ -1,0 +1,14 @@
+server:
+  port: 9009
+spring:
+  application:
+    name: nacos-payment-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.41.129:1111
+management:
+  endpoints:
+    jmx:
+      exposure:
+        include: '*'

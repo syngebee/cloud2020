@@ -1,0 +1,13 @@
+server:
+  port: 83
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  application:
+    name: nacos-order-consumer
+
+#仅仅是自定义的属性,用来注入的
+service-url:
+  nacos-user-service: http://nacos-payment-provider

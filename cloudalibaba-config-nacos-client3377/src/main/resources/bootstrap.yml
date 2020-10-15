@@ -1,0 +1,14 @@
+server:
+  port: 3377
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      config:
+        file-extension: yaml
+        server-addr: localhost:8848
+        namespace: b1520863-b9ce-4748-a75e-5b8fb6a329f5
+        group: DEV_GROUP
+  application:
+    name: nacos-config-client

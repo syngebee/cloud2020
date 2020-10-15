@@ -1,4 +1,4 @@
-package com.itheima.springcloud.config;
+package com.itheima.springcloud.alibaba.config;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
@@ -9,8 +9,9 @@ import org.springframework.web.client.RestTemplate;
 public class ApplicationContextConfig {
 
     @Bean
-//    @LoadBalanced  //注释: 使用手动实现的RoundLoadBalanced
+    @LoadBalanced
     public RestTemplate restTemplate(){
         return new RestTemplate();
     }
+
 }
