@@ -4,5 +4,4 @@ import com.itheima.cloud.alibaba.domain.Order;
 
 public interface OrderService {
     void create(Order order);
-
 }

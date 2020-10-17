@@ -6,22 +6,26 @@ import com.itheima.cloud.alibaba.domain.Order;
 import com.itheima.cloud.alibaba.service.AccountService;
 import com.itheima.cloud.alibaba.service.OrderService;
 import com.itheima.cloud.alibaba.service.StorageService;
+import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service
+import javax.annotation.Resource;
+import java.util.concurrent.TimeoutException;
+
 @Slf4j
+@Service
 public class OrderServiceImpl implements OrderService {
 
-    @Autowired
+    @Resource
     private OrderDao orderDao;
-    @Autowired
+    @Resource
     private StorageService stroageService;
-    @Autowired
+    @Resource
     private AccountService accountService;
 
     @Override
+    @GlobalTransactional(name = "orderGlobalTransactional",rollbackFor = Exception.class)
     public void create(Order order) {
         //新建订单
         log.info("------>开始新建订单");
@@ -36,6 +40,6 @@ public class OrderServiceImpl implements OrderService {
         log.info("------>修改订单状态开始");
         orderDao.update(order.getUserId(),0);
         log.info("------>修改订单状态结束");
-        log.info("------>下订单状态结束");
+        log.info("------>下单状态结束");
     }
 }
